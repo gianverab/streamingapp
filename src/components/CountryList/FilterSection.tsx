@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   ScrollView,
 } from 'react-native';
-import { Continent } from '../../services/graphql/types';
+import { Continent } from '../../graphql/types';
 
 interface FilterSectionProps {
   continents: Continent[];

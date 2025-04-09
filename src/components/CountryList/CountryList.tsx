@@ -7,7 +7,7 @@ import {
   View,
   ActivityIndicator,
 } from 'react-native';
-import { Country } from '../../services/graphql/types';
+import { Country } from '../../graphql/types';
 import CountryItem from './CountryItem';
 
 interface CountryListProps {

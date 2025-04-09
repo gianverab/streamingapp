@@ -1,5 +1,6 @@
-import {gql} from '@apollo/client';
+import { gql } from '@apollo/client';
 
+// Get all continents
 export const GET_CONTINENTS = gql`
   query GetContinents {
     continents {
@@ -9,6 +10,7 @@ export const GET_CONTINENTS = gql`
   }
 `;
 
+// Get all countries
 export const GET_COUNTRIES = gql`
   query GetCountries {
     countries {
@@ -30,6 +32,7 @@ export const GET_COUNTRIES = gql`
   }
 `;
 
+// Get a specific country
 export const GET_COUNTRY_BY_CODE = gql`
   query GetCountry($code: ID!) {
     country(code: $code) {
@@ -47,6 +50,22 @@ export const GET_COUNTRY_BY_CODE = gql`
         code
         name
       }
+      phone
+      states {
+        code
+        name
+      }
+    }
+  }
+`;
+
+// Get all languages
+export const GET_LANGUAGES = gql`
+  query GetLanguages {
+    languages {
+      code
+      name
+      native
     }
   }
 `;

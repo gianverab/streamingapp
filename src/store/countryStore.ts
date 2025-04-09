@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { Country } from '../services/graphql/types';
+import { Country } from '../graphql/types';
 
 interface CountryState {
   countries: Country[];

@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { SafeAreaView, StyleSheet, View } from 'react-native';
 import { useQuery } from '@apollo/client';
-import { GET_COUNTRIES, GET_CONTINENTS } from '../services/graphql/queries';
+import { GET_COUNTRIES, GET_CONTINENTS } from '../graphql/queries';
 import {
   GetCountriesResponse,
   GetContinentsResponse,
   Continent,
-} from '../services/graphql/types';
+} from '../graphql/types';
 import SearchBar from '../components/CountryList/SearchBar';
 import FilterSection from '../components/CountryList/FilterSection';
 import CountryList from '../components/CountryList/CountryList';

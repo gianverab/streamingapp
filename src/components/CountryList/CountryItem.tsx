@@ -1,6 +1,6 @@
 import React from 'react';
 import { TouchableOpacity, Text, View, StyleSheet } from 'react-native';
-import { Country } from '../../services/graphql/types';
+import { Country } from '../../graphql/types';
 
 interface CountryItemProps {
   country: Country;
