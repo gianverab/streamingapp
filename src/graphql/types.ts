@@ -13,7 +13,8 @@ export interface Country {
   name: string;
   native: string;
   capital: string;
-  emoji: string;
+  phone?: string;
+  emoji?: string;
   currency: string;
   languages: Language[];
   continent: Continent;
