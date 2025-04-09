@@ -12,7 +12,7 @@ const CountryListScreen: React.FC<CountryListScreenNavigationProps> = ({
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
-        <Text>CountryListScreen</Text>
+        <Text>Home: CountryListScreen</Text>
       </View>
     </SafeAreaView>
   );
