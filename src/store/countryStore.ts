@@ -1,4 +1,3 @@
-// src/store/countryStore.ts
 import { create } from 'zustand';
 import { Country } from '../services/graphql/types';
 
