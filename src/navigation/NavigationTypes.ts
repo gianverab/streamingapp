@@ -1,22 +1,16 @@
-import { RouteProp } from '@react-navigation/native';
-import { StackNavigationProp } from '@react-navigation/stack';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 export type RootStackParamList = {
   CountryList: undefined;
   CountryDetail: { countryCode: string };
 };
 
-export type CountryListScreenNavigationProp = StackNavigationProp<
+export type CountryListScreenNavigationProps = NativeStackScreenProps<
   RootStackParamList,
   'CountryList'
 >;
 
-export type CountryDetailScreenRouteProp = RouteProp<
-  RootStackParamList,
-  'CountryDetail'
->;
-
-export type CountryDetailScreenNavigationProp = StackNavigationProp<
+export type CountryDetailScreenNavigationProps = NativeStackScreenProps<
   RootStackParamList,
   'CountryDetail'
 >;

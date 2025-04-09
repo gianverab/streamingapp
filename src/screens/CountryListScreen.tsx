@@ -1,12 +1,12 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet, View, Text } from 'react-native';
-import { CountryListScreenNavigationProp } from '../navigation/NavigationTypes';
+import { CountryListScreenNavigationProps } from '../navigation/NavigationTypes';
 
-interface CountryListScreenProps {
-  navigation: CountryListScreenNavigationProp;
-}
+/* interface CountryListScreenProps {
+  navigation: CountryListScreenNavigationProps;
+} */
 
-const CountryListScreen: React.FC<CountryListScreenProps> = ({
+const CountryListScreen: React.FC<CountryListScreenNavigationProps> = ({
   navigation,
 }) => {
   return (

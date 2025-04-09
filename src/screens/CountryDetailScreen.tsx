@@ -1,12 +1,12 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet, View, Text } from 'react-native';
-import { CountryDetailScreenNavigationProp } from '../navigation/NavigationTypes';
+import { CountryDetailScreenNavigationProps } from '../navigation/NavigationTypes';
 
-interface CountryDetailScreenProps {
+/* interface CountryDetailScreenProps {
   navigation: CountryDetailScreenNavigationProp;
-}
+} */
 
-const CountryDetailScreen: React.FC<CountryDetailScreenProps> = ({
+const CountryDetailScreen: React.FC<CountryDetailScreenNavigationProps> = ({
   navigation,
 }) => {
   return (
