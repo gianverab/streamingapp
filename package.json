@@ -10,6 +10,8 @@
     "test": "jest"
   },
   "dependencies": {
+    "@apollo/client": "^3.13.6",
+    "graphql": "^16.10.0",
     "nativewind": "^4.1.23",
     "react": "19.0.0",
     "react-native": "0.78.2",
