@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, Text, Dimensions } from 'react-native';
-import Video from 'react-native-video';
 import VideoControls from 'react-native-video-controls';
 
 // Sample HLS videos from hls.js demo
