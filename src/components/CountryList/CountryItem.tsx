@@ -1,26 +1,27 @@
 import React from 'react';
-import { TouchableOpacity, Text, View, StyleSheet } from 'react-native';
-import { Country } from '../../graphql/types';
+import { StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
+import { Country } from '../../types';
 
 interface CountryItemProps {
   country: Country;
-  onPress: () => void;
+  onPress: (countryCode: string) => void;
 }
 
 const CountryItem: React.FC<CountryItemProps> = ({ country, onPress }) => {
   return (
     <TouchableOpacity
       style={styles.container}
-      onPress={onPress}
-      activeOpacity={0.7}>
-      <View style={styles.emojiContainer}>
-        <Text style={styles.emoji}>{country.emoji}</Text>
-      </View>
-      <View style={styles.infoContainer}>
-        <Text style={styles.name}>{country.name}</Text>
-        <View style={styles.detailsRow}>
-          <Text style={styles.code}>{country.code}</Text>
-          <Text style={styles.continent}>{country.continent.name}</Text>
+      onPress={() => onPress(country.code)}>
+      <View style={styles.content}>
+        <Text style={styles.emoji}>{country.emoji || '🏳️'}</Text>
+        <View style={styles.info}>
+          <Text style={styles.name}>{country.name}</Text>
+          <Text style={styles.details}>
+            {country.code} • {country.continent.name}
+          </Text>
+          {country.currency && (
+            <Text style={styles.currency}>Moneda: {country.currency}</Text>
+          )}
         </View>
       </View>
     </TouchableOpacity>
@@ -29,40 +30,41 @@ const CountryItem: React.FC<CountryItemProps> = ({ country, onPress }) => {
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'row',
-    padding: 16,
-    borderBottomWidth: 1,
-    borderBottomColor: '#e0e0e0',
-    backgroundColor: 'white',
+    backgroundColor: '#fff',
+    borderRadius: 8,
+    marginHorizontal: 10,
+    marginVertical: 5,
+    padding: 15,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.2,
+    shadowRadius: 1,
+    elevation: 2,
   },
-  emojiContainer: {
-    marginRight: 12,
-    justifyContent: 'center',
+  content: {
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   emoji: {
     fontSize: 30,
+    marginRight: 15,
   },
-  infoContainer: {
+  info: {
     flex: 1,
-    justifyContent: 'center',
   },
   name: {
     fontSize: 18,
     fontWeight: 'bold',
-    marginBottom: 4,
-    color: '#333',
+    marginBottom: 3,
   },
-  detailsRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  code: {
-    fontSize: 14,
+  details: {
     color: '#666',
-  },
-  continent: {
     fontSize: 14,
+    marginBottom: 3,
+  },
+  currency: {
     color: '#666',
+    fontSize: 14,
   },
 });
 

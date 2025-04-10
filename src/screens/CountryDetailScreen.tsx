@@ -2,7 +2,7 @@ import React from 'react';
 import { SafeAreaView, StyleSheet, ScrollView } from 'react-native';
 import { useQuery } from '@apollo/client';
 import { GET_COUNTRY_BY_CODE } from '../graphql/queries';
-import { GetCountryResponse } from '../graphql/types';
+import { GetCountryResponse } from '../types';
 import CountryInfo from '../components/CountryDetail/CountryInfo';
 import VideoPlayer from '../components/CountryDetail/VideoPlayer';
 import Loading from '../components/common/Loading';
