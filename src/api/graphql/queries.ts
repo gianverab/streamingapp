@@ -33,7 +33,7 @@ export const GET_COUNTRIES = gql`
 `;
 
 // Get a specific country
-export const GET_COUNTRY_BY_CODE = gql`
+export const GET_COUNTRY = gql`
   query GetCountry($code: ID!) {
     country(code: $code) {
       code

@@ -20,14 +20,20 @@ export interface Country {
   continent: Continent;
 }
 
-export interface GetCountriesResponse {
+export interface CountriesData {
   countries: Country[];
 }
 
-export interface GetContinentsResponse {
+export interface ContinentsData {
   continents: Continent[];
 }
 
-export interface GetCountryResponse {
+export interface CountryData {
   country: Country;
+}
+
+export interface FilterOptions {
+  search: string;
+  continent: string;
+  currency: string;
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, TextInput, StyleSheet } from 'react-native';
+import { TextInput, View, StyleSheet } from 'react-native';
 
 interface SearchBarProps {
   value: string;
@@ -10,7 +10,7 @@ interface SearchBarProps {
 const SearchBar: React.FC<SearchBarProps> = ({
   value,
   onChangeText,
-  placeholder = 'Search countries...',
+  placeholder = 'Search...',
 }) => {
   return (
     <View style={styles.container}>
@@ -19,7 +19,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
         value={value}
         onChangeText={onChangeText}
         placeholder={placeholder}
-        placeholderTextColor="#888"
+        placeholderTextColor="#999"
       />
     </View>
   );
@@ -27,16 +27,15 @@ const SearchBar: React.FC<SearchBarProps> = ({
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: '#f5f5f5',
+    borderRadius: 8,
     padding: 10,
-    backgroundColor: '#f8f8f8',
+    marginBottom: 10,
   },
   input: {
     height: 40,
-    backgroundColor: 'white',
-    paddingHorizontal: 10,
-    borderRadius: 10,
-    borderWidth: 1,
-    borderColor: '#ddd',
+    fontSize: 16,
+    color: '#333',
   },
 });
 
