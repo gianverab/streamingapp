@@ -7,7 +7,7 @@ import {
   Text,
 } from 'react-native';
 import { useReactiveVar } from '@apollo/client';
-import { searchQueryVar, updateSearchQuery } from '../../services/apollo';
+import { searchQueryVar, updateSearchQuery } from '../../api/apollo';
 
 const SearchBar: React.FC = () => {
   // Usar variable reactiva para manejo de estado

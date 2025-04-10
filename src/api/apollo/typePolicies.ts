@@ -1,4 +1,3 @@
-// src/apollo/typePolicies.ts
 import { TypePolicies } from '@apollo/client';
 import {
   searchQueryVar,

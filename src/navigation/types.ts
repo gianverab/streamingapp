@@ -5,12 +5,12 @@ export type RootStackParamList = {
   CountryDetail: { countryCode: string };
 };
 
-export type CountryListScreenNavigationProps = NativeStackScreenProps<
+export type CountryListScreenProps = NativeStackScreenProps<
   RootStackParamList,
   'CountryList'
 >;
 
-export type CountryDetailScreenNavigationProps = NativeStackScreenProps<
+export type CountryDetailScreenProps = NativeStackScreenProps<
   RootStackParamList,
   'CountryDetail'
 >;

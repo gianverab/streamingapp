@@ -1,13 +1,13 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet, ScrollView } from 'react-native';
 import { useQuery } from '@apollo/client';
-import { GET_COUNTRY_BY_CODE } from '../graphql/queries';
+import { GET_COUNTRY_BY_CODE } from '../api/graphql/queries';
 import { GetCountryResponse } from '../types';
 import CountryInfo from '../components/CountryDetail/CountryInfo';
 import VideoPlayer from '../components/CountryDetail/VideoPlayer';
 import Loading from '../components/common/Loading';
 import Error from '../components/common/Error';
-import { CountryDetailScreenNavigationProps } from '../navigation/NavigationTypes';
+import { CountryDetailScreenNavigationProps } from '../navigation/types';
 
 /* interface CountryDetailScreenProps {
   navigation: CountryDetailScreenNavigationProp;

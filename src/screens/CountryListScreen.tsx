@@ -10,13 +10,13 @@ import {
 } from 'react-native';
 import { useQuery, useReactiveVar } from '@apollo/client';
 import { useNavigation } from '@react-navigation/native';
-import { GET_COUNTRIES } from '../graphql/queries';
+import { GET_COUNTRIES } from '../api/graphql/queries';
 import {
   searchQueryVar,
   selectedContinentVar,
   selectedCurrencyVar,
   resetFilters,
-} from '../services/apollo';
+} from '../api/apollo';
 import SearchBar from '../components/CountryList/SearchBar';
 //import ContinentFilter from '../components/ContinentFilter';
 //import CurrencyFilter from '../components/CurrencyFilter';
@@ -96,8 +96,8 @@ const CountryListScreen: React.FC = () => {
   return (
     <SafeAreaView style={styles.container}>
       <SearchBar />
-      <ContinentFilter />
-      <CurrencyFilter />
+      {/* <ContinentFilter />
+      <CurrencyFilter /> */}
 
       {/* Botón para limpiar filtros (solo visible cuando hay filtros activos) */}
       {hasActiveFilters && (
