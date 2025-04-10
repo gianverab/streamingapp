@@ -60,10 +60,10 @@ After finish this step run:
 
 ```sh
 # Using npm
-npm run ios
+npm run android
 
 # OR using Yarn
-yarn ios
+yarn android
 ```
 
 ### iOS
