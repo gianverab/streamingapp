@@ -26,12 +26,20 @@ const SearchBar: React.FC<SearchBarProps> = ({
         onChangeText={onChangeText}
         placeholder={placeholder}
         placeholderTextColor="#999"
+        accessible={true}
+        accessibilityLabel="Search for countries"
+        accessibilityHint="Enter a country name to filter the list"
+        accessibilityRole="search"
+        returnKeyType="search"
       />
       {value.length > 0 && (
         <TouchableOpacity
           style={styles.clearButton}
           onPress={() => onChangeText('')}
-          accessibilityLabel="Clear search">
+          accessible={true}
+          accessibilityLabel="Clear search"
+          accessibilityRole="button"
+          accessibilityHint="Clears the search input">
           <Text style={styles.clearButtonText}>✕</Text>
         </TouchableOpacity>
       )}
