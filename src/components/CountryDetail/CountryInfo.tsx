@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
-import { Country } from '../../graphql/types';
+import { Country } from '../../types';
 
 interface CountryInfoProps {
   country: Country;
