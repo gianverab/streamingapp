@@ -1,15 +1,38 @@
-import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import React, { useRef, useEffect } from 'react';
+import {
+  View,
+  Text,
+  StyleSheet,
+  findNodeHandle,
+  AccessibilityInfo,
+} from 'react-native';
 import { Country } from '../../types';
+import { scaledFontSize } from '../../utils/accessibility';
 
 interface CountryInfoProps {
   country: Country;
 }
 
 const CountryInfo: React.FC<CountryInfoProps> = ({ country }) => {
+  const headerRef = useRef(null);
+
+  useEffect(() => {
+    // Set focus to the country name header when screen loads
+    if (headerRef.current) {
+      const reactTag = findNodeHandle(headerRef.current);
+      if (reactTag) {
+        AccessibilityInfo.setAccessibilityFocus(reactTag);
+      }
+    }
+  }, []);
   return (
     <View>
-      <View style={styles.headerContainer}>
+      <View
+        style={styles.headerContainer}
+        ref={headerRef}
+        accessible={true}
+        accessibilityRole="header"
+        accessibilityLabel={`${country.name} country. Code: ${country.code}. Continent: ${country.continent.name}`}>
         <Text style={styles.emoji}>{country.emoji}</Text>
         <Text style={styles.name}>{country.name}</Text>
         <Text style={styles.code}>{country.code}</Text>
@@ -72,14 +95,14 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   name: {
-    fontSize: 24,
+    fontSize: scaledFontSize(24),
     fontWeight: 'bold',
     color: '#333',
     textAlign: 'center',
     marginBottom: 5,
   },
   code: {
-    fontSize: 16,
+    fontSize: scaledFontSize(16),
     color: '#666',
     backgroundColor: '#e6e6e6',
     paddingHorizontal: 10,
@@ -97,13 +120,13 @@ const styles = StyleSheet.create({
   },
   infoLabel: {
     width: 120,
-    fontSize: 16,
+    fontSize: scaledFontSize(16),
     fontWeight: 'bold',
     color: '#333',
   },
   infoValue: {
     flex: 1,
-    fontSize: 16,
+    fontSize: scaledFontSize(16),
     color: '#666',
   },
   languagesContainer: {
@@ -120,7 +143,7 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   languageText: {
-    fontSize: 14,
+    fontSize: scaledFontSize(14),
     color: '#0066cc',
   },
 });

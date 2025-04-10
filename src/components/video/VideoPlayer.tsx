@@ -27,9 +27,15 @@ const VideoPlayer = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{selectedVideo.title}</Text>
+      <Text style={styles.title} accessible={true} accessibilityRole="header">
+        {selectedVideo.title}
+      </Text>
 
-      <View style={styles.playerContainer}>
+      <View
+        style={styles.playerContainer}
+        accessible={true}
+        accessibilityLabel={`Video player for ${selectedVideo.title}`}
+        accessibilityHint="Use play and pause buttons to control video playback">
         {error ? (
           <View style={styles.errorContainer}>
             <Text style={styles.errorText}>{error}</Text>
@@ -44,6 +50,20 @@ const VideoPlayer = () => {
             disableVolume={false}
             disableBack={true}
             disableFullscreen={false}
+            accessibilityActions={[
+              { name: 'play', label: 'play video' },
+              { name: 'pause', label: 'pause video' },
+            ]}
+            onAccessibilityAction={(event: any) => {
+              switch (event.nativeEvent.actionName) {
+                case 'play':
+                  // Handle play
+                  break;
+                case 'pause':
+                  // Handle pause
+                  break;
+              }
+            }}
           />
         )}
       </View>

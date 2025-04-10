@@ -11,7 +11,11 @@ const CountryItem: React.FC<CountryItemProps> = ({ country, onPress }) => {
   return (
     <TouchableOpacity
       style={styles.container}
-      onPress={() => onPress(country.code)}>
+      onPress={() => onPress(country.code)}
+      accessible={true}
+      accessibilityLabel={`${country.name} country. Code: ${country.code}. Continent: ${country.continent.name}`}
+      accessibilityRole="button"
+      accessibilityHint="Tap to view country details">
       <View style={styles.emojiContainer}>
         <Text style={styles.emoji}>{country.emoji}</Text>
       </View>
