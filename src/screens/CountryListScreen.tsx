@@ -17,10 +17,10 @@ import {
   selectedCurrencyVar,
   resetFilters,
 } from '../api/apollo';
-import SearchBar from '../components/CountryList/SearchBar';
+import SearchBar from '../components/common/SearchBar';
 //import ContinentFilter from '../components/ContinentFilter';
 //import CurrencyFilter from '../components/CurrencyFilter';
-import CountryItem from '../components/CountryList/CountryItem';
+import CountryItem from '../components/country/CountryItem';
 import { Country } from '../types';
 
 const CountryListScreen: React.FC = () => {
