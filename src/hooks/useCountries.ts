@@ -1,12 +1,7 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { useQuery } from '@apollo/client';
 import { GET_COUNTRIES, GET_CONTINENTS } from '../api/graphql/queries';
-import {
-  CountriesData,
-  Country,
-  ContinentsData,
-  FilterOptions,
-} from '../types';
+import { CountriesData, ContinentsData, FilterOptions } from '../types';
 
 export const useCountries = () => {
   const [filterOptions, setFilterOptions] = useState<FilterOptions>({
